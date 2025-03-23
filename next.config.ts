@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/api/**", // Specific to /api
+        source: "/api/*", // Specific to /api
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
