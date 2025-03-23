@@ -17,7 +17,10 @@ export default function DestinationCard() {
   useEffect(() => {
     async function fetchDestinations() {
       try {
-        const res = await fetch("/api/destinations");
+        const basePath =
+          process.env.NEXT_PUBLIC_API_URL ||
+          "https://nextjs-15-travel.vercel.app/";
+        const res = await fetch(`${basePath}/api/destinations`);
         if (!res.ok) throw new Error("Failed to fetch");
 
         const data = await res.json();

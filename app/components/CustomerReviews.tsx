@@ -1,23 +1,7 @@
-"use client";
-
+// components/CustomerReviews.tsx
 import { ReviewType } from "@/types";
-import { useEffect, useState } from "react";
 
-const CustomerReviews = () => {
-  const [reviews, setReviews] = useState<ReviewType[] | []>([]);
-
-  useEffect(() => {
-    // Fetch all reviews from the API
-    async function fetchReviews() {
-      const basePath = process.env.NEXT_PUBLIC_API_URL || "";
-      const response = await fetch(`${basePath}/api/reviews`);
-      const data = await response.json();
-      setReviews(data);
-    }
-
-    fetchReviews();
-  }, []);
-
+const CustomerReviews = ({ reviews }: { reviews: ReviewType[] }) => {
   return (
     <div className="mt-8 space-y-4">
       <h2 className="text-xl font-semibold">All Reviews</h2>

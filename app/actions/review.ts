@@ -11,20 +11,19 @@ export async function submitReview(formData: FormData) {
   };
 
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/reviews`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(reviewData),
-      }
-    );
+    const basePath =
+      process.env.NEXT_PUBLIC_API_URL || "https://nextjs-15-travel.vercel.app/";
+    const response = await fetch(`${basePath}/api/reviews`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reviewData),
+    });
 
     if (!response.ok) throw new Error("Failed to submit review");
 
-    revalidatePath("/"); // Revalidate the page to update UI
+    revalidatePath("/reviews"); // Revalidate the page to update UI
 
     return { success: true, message: "Review submitted successfully!" };
   } catch (error) {
