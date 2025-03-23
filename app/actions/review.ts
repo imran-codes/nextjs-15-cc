@@ -13,7 +13,7 @@ export async function submitReview(formData: FormData) {
   try {
     const basePath =
       process.env.NEXT_PUBLIC_API_URL ||
-      "https://nextjs-15-cc-eight.vercel.app/";
+      "https://nextjs-15-cc-eight.vercel.app";
     const response = await fetch(`${basePath}/api/reviews`, {
       method: "POST",
       headers: {

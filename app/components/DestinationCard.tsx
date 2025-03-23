@@ -19,7 +19,7 @@ export default function DestinationCard() {
       try {
         const basePath =
           process.env.NEXT_PUBLIC_API_URL ||
-          "https://nextjs-15-cc-eight.vercel.app/";
+          "https://nextjs-15-cc-eight.vercel.app";
         const res = await fetch(`${basePath}/api/destinations`);
         if (!res.ok) throw new Error("Failed to fetch");
 
