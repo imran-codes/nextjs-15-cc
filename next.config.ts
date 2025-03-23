@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://nextjs-15-cc-eight.vercel.app/", // Allow only your frontend
+            value: "https://nextjs-15-cc-eight.vercel.app", // Allow only your frontend
           },
           {
             key: "Access-Control-Allow-Methods",
